@@ -153,8 +153,8 @@ for (const effect of allEffects) {
 
 // Handle the /about command
 const aboutUrlKeyboard = new InlineKeyboard().url(
-  "Host your own bot for free.",
-  "https://cyclic.sh/"
+  "GooGle",
+  "https://Google.com/"
 );
 
 // Suggest commands in the menu
@@ -168,7 +168,7 @@ bot.api.setMyCommands([
 
 // Handle all other messages and the /start command
 const introductionMessage = `Hello! I'm a Telegram bot.
-I'm powered by Cyclic, the next-generation serverless computing platform.
+I'm Create by Venkatesh, the next-generation of india.
 
 <b>Commands</b>
 /yo - Be greeted by me
