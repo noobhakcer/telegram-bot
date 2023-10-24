@@ -11,6 +11,14 @@ const bot = new Bot(process.env.TELEGRAM_TOKEN || "");
 // Handle the /yo command to greet the user
 bot.command("yo", (ctx) => ctx.reply(`Yo ${ctx.from?.username}`));
 
+bot.on("message", async (ctx) => {
+  // Get the chat identifier.
+  const chatId = ctx.msg.chat.id;
+  // The text to reply with
+  const text = "I got your message!";
+  // Send the reply.
+  await bot.api.sendMessage(chatId, text);
+});
 // Handle the /effect command to apply text effects using an inline keyboard
 type Effect = { code: TextEffectVariant; label: string };
 const allEffects: Effect[] = [
