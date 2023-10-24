@@ -10,12 +10,14 @@ const bot = new Bot(process.env.TELEGRAM_TOKEN || "");
 
 // Handle the /yo command to greet the user
 bot.command("yo", (ctx) => ctx.reply(`Yo ${ctx.from?.username}`));
+bot.command("hi", (ctx) => ctx.reply(`hi i think you are ${ctx.from?.username}`));
+
 
 bot.on("message", async (ctx) => {
   // Get the chat identifier.
   const chatId = ctx.msg.chat.id;
   // The text to reply with
-  const text = "I got your message!";
+  const text = "I got your message!" + chatId;
   // Send the reply.
   await bot.api.sendMessage(chatId, text);
 });
