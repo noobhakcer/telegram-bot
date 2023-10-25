@@ -22,14 +22,7 @@ bot.on("message:file", async (ctx) => {
   const path = file.file_path; // file path on Bot API server
   await ctx.reply("Download your own file again: " + path);
 });
-bot.on("message", async (ctx) => {
-  // Get the chat identifier.
-  const chatId = ctx.msg.chat.id;
-  // The text to reply with
-  const text = "I got your message!" + chatId;
-  // Send the reply.
-  await bot.api.sendMessage(chatId, text);
-});
+
 // Handle the /effect command to apply text effects using an inline keyboard
 type Effect = { code: TextEffectVariant; label: string };
 const allEffects: Effect[] = [
