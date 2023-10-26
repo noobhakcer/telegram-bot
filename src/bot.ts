@@ -13,9 +13,7 @@ bot.command("yo", (ctx) => ctx.reply(`Yo ${ctx.from?.username}`));
 bot.command("hi", (ctx) => ctx.reply(`hi i think you are ${ctx.from?.username}`));
 
 bot.on(":file", async (ctx) => {
-  const voice = ctx.msg.file;
-
-  const fileId = voice.file_id;
+  const fileId = file.file_id;
   await ctx.reply("The file identifier of your voice message is: " + fileId);
 
   const file = await ctx.getFile(); // valid for at least 1 hour
