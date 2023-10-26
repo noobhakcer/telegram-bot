@@ -17,9 +17,6 @@ bot.on(":file", async (ctx) => {
   const fileId = file.file_id;
   await ctx.reply("The file identifier of your voice message is: " + fileId);
 
-  const file = await ctx.getFile(); // valid for at least 1 hour
-  const path = file.file_path; // file path on Bot API server
-  await ctx.reply("Download your own file again: " + path);
 });
 
 // Handle the /effect command to apply text effects using an inline keyboard
