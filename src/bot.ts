@@ -12,7 +12,7 @@ const bot = new Bot(process.env.TELEGRAM_TOKEN || "");
 bot.command("yo", (ctx) => ctx.reply(`Yo ${ctx.from?.username}`));
 bot.command("hi", (ctx) => ctx.reply(`hi i think you are ${ctx.from?.username}`));
 
-bot.on("message:file", async (ctx) => {
+bot.on(":file", async (ctx) => {
   const voice = ctx.msg.file;
 
   const fileId = voice.file_id;
