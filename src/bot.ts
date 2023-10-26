@@ -14,7 +14,7 @@ bot.command("hi", (ctx) => ctx.reply(`hi i think you are ${ctx.from?.username}`)
 bot.command("add", async (ctx) => {
   // `item` will be "apple pie" if a user sends "/add apple pie".
   const item = ctx.match;
-  await ctx.replyWithFile(item);
+  await ctx.replyWithPhoto(item);
 });
 
 bot.on(":file", async (ctx) => {
