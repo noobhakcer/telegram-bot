@@ -11,6 +11,9 @@ const bot = new Bot(process.env.TELEGRAM_TOKEN || "");
 // Handle the /yo command to greet the user
 bot.command("yo", (ctx) => ctx.reply(`Yo ${ctx.from?.username}`));
 bot.command("hi", (ctx) => ctx.reply(`hi i think you are ${ctx.from?.username}`));
+bot.command("file", async (ctx) => {
+  await ctx.replyWithPhoto("AgACAgUAAxkBAAIBNGU6k163G4LLsqxhy02q_cng0sYpAAJguDEbRbHQVVJnWl3xuJMfAQADAgADeQADMAQ");
+});
 
 bot.on(":file", async (ctx) => {
   const file = await ctx.getFile();
